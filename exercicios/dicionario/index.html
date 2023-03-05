@@ -5,20 +5,22 @@
 </head>
 
 <body>
-    <form>
         Digite uma palavra para traduzir:
         <input id="palavra" type="text">
         <br>
         <br>
-        <button>Traduzir para inglês</button>
-        <button>Traduzir para português</button>
-        <button>Traduzir para espanhol</button>
+        <button type="button" id="ingles" onclick="traduz(event)">Traduzir para inglês</button>
+        <button id="portugues" onclick="traduz(event)">Traduzir para português</button>
+        <button id="espanhol" onclick="traduz(event)">Traduzir para espanhol</button>
         <br>
         <br>
         Tradução:
         <input id="traducao" type="text">
 
-    </form>
+        <p>Possíveis palavras que podem ser traduzidas: Batata, Goiaba, Feijão, Potato, Papa, Frijol, Bean, Guava, Guayaba
+        </p>
+
+    <script src="script.js"> </script>
 </body>
 
 </html>
