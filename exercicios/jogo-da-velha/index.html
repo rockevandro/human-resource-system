@@ -2,70 +2,77 @@
     <head></head>
     <body>
         <form>
-            Digite o nome do jogador X: <input type="text">
+            Digite o nome do jogador X: <input id="nomeX" type="text">
             <br>
-            Digite o nome do jogador O: <input type="text">
+            Digite o nome do jogador O: <input id="nomeO"type="text">
             <br>
             <br>
-            <select id="opcao00">
+            <select id="opcao00" onchange="verificarGanhador()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
-            <select id="opcao01">
+            <select id="opcao01" onchange="verificarGanhador()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
-            <select id="opcao02">
-                <option value=" "> </option>
-                <option value="X">X</option>
-                <option value="O">O</option>
-            </select>
-            <br>
-            <select id="opcao10">
-                <option value=" "> </option>
-                <option value="X">X</option>
-                <option value="O">O</option>
-            </select>
-            <select id="opcao11">
-                <option value=" "> </option>
-                <option value="X">X</option>
-                <option value="O">O</option>
-            </select>
-            <select id="opcao12">
+            <select id="opcao02" onchange="verificarGanhador()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
             <br>
-            <select id="opcao20">
+            <select id="opcao10" onchange="verificarGanhador()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
-            <select id="opcao21">
+            <select id="opcao11" onchange="verificarGanhador()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
-            <select id="opcao22">
+            <select id="opcao12" onchange="verificarGanhador()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
+            <br>
+            <select id="opcao20" onchange="verificarGanhador()">
+                <option value=" "> </option>
+                <option value="X">X</option>
+                <option value="O">O</option>
+            </select>
+            <select id="opcao21" onchange="verificarGanhador()">
+                <option value=" "> </option>
+                <option value="X">X</option>
+                <option value="O">O</option>
+            </select>
+            <select id="opcao22" onchange="verificarGanhador()">
+                <option value=" "> </option>
+                <option value="X">X</option>
+                <option value="O">O</option>
+            </select>
+            <br>
+            <br>
+            <button type="button" onclick="limpaJogo()">Limpar Casas</button>
             <br>
             <br>
             Resultado:
             <br>
             <br>
-
-            X: <input type="text" disabled>
+            <input id="ganhador" type="text" disabled>
             <br>
-            O: <input type="text" disabled>
+            <br>
+            X: <input type="text" id="resultadoX" disabled>
+            <br>
+            O: <input type="text" id="resultadoO" disabled>
             <br>
             <br>
             <input type="reset" value="Reset">
         </form>
+
+        <script src="script.js"></script>
     </body>
 </html>
