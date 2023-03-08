@@ -1,12 +1,14 @@
 <html>
     <head></head>
     <body>
-        Digite seu salário bruto: <input type="text">
+        Digite seu salário bruto R$: <input id="salario" type="text">
         <br>
         <br>
-        Digite o percentual inss: <input type="text">
+        Digite o percentual inss R$: <input id="inss" type="text">
         <br>
+        <button onclick="calcular()" id="botao">Calcular</button>
         <br>
-        Resultado do salário líquido: <input type="text" disabled>
+        Resultado do salário líquido: <input id="salarioLiquido" type="text" disabled>
+        <script src="script.js"></script>
     </body>
 </html>

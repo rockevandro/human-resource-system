@@ -42,5 +42,3 @@ function traduz(event){
         }
     }
 }
-
-
