@@ -2,70 +2,76 @@
     <head></head>
     <body>
         <form>
-            Digite o nome do jogador X: <input type="text">
+            Digite o nome do jogador X: <input type="text" id="jogadorX">
             <br>
-            Digite o nome do jogador O: <input type="text">
+            Digite o nome do jogador O: <input type="text" id="jogadorO">
             <br>
             <br>
-            <select id="opcao00">
+            <select id="opcao00" onchange="verificaInput()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
-            <select id="opcao01">
+            <select id="opcao01" onchange="verificaInput()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
-            <select id="opcao02">
-                <option value=" "> </option>
-                <option value="X">X</option>
-                <option value="O">O</option>
-            </select>
-            <br>
-            <select id="opcao10">
-                <option value=" "> </option>
-                <option value="X">X</option>
-                <option value="O">O</option>
-            </select>
-            <select id="opcao11">
-                <option value=" "> </option>
-                <option value="X">X</option>
-                <option value="O">O</option>
-            </select>
-            <select id="opcao12">
+            <select id="opcao02" onchange="verificaInput()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
             <br>
-            <select id="opcao20">
+            <select id="opcao10" onchange="verificaInput()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
-            <select id="opcao21">
+            <select id="opcao11" onchange="verificaInput()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
-            <select id="opcao22">
+            <select id="opcao12" onchange="verificaInput()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
+            <br>
+            <select id="opcao20" onchange="verificaInput()">
+                <option value=" "> </option>
+                <option value="X">X</option>
+                <option value="O">O</option>
+            </select>
+            <select id="opcao21" onchange="verificaInput()">
+                <option value=" "> </option>
+                <option value="X">X</option>
+                <option value="O">O</option>
+            </select>
+            <select id="opcao22" onchange="verificaInput()">
+                <option value=" "> </option>
+                <option value="X">X</option>
+                <option value="O">O</option>
+            </select>
+            <br>
+            <br>
+            <button type="button" onclick="limparJogo()">Limpar Jogo</button>
             <br>
             <br>
             Resultado:
+            <input type="text" id="mostraResultado" disabled>
             <br>
             <br>
 
-            X: <input type="text" disabled>
+            X: <input type="text" id="resultX" disabled>
             <br>
-            O: <input type="text" disabled>
+            O: <input type="text" id="resultO"disabled>
             <br>
             <br>
             <input type="reset" value="Reset">
         </form>
+
+        <script src="jogo-da-velha.js"></script>
     </body>
 </html>
