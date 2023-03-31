@@ -1,0 +1,102 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #95f33d;
+    background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: #fff;
+    text-shadow: 1px 1px 1px #444;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #777;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    width: 400px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #ccc;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 2px 8px #ccc;
+}
+
+input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+strong {
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 1px 1px 1px #444;
+}
+
+#selectCandidato {
+    float: left;
+    width: 300px;
+    height: 200px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #ccc;
+    overflow-y: scroll;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    width: 400px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #ccc;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 2px 8px #ccc;
+}
+
+input[type="checkbox"]:checked + label:before {
+    content: "\f046";
+    font-family: 'FontAwesome';
+    color: #38b2ac;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+input[type="checkbox"] + label:before {
+    content: "\f096";
+    font-family: 'FontAwesome';
+    color: #ddd;
+    font-size: 16px;
+    margin-right: 10px;
+}
+

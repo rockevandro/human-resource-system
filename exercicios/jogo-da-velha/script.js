@@ -67,6 +67,35 @@ function verificarGanhador(){
     }
     ganhador()
 }
+function desativarOpcoesSelecionadas() {
+    if(inputOpcao00.value === "O" || inputOpcao00.value === "X"){
+        inputOpcao00.disabled = true
+    }
+    if(inputOpcao01.value === "O" || inputOpcao01.value === "X"){
+        inputOpcao01.disabled = true
+    }
+    if(inputOpcao02.value === "O" || inputOpcao02.value === "X"){
+        inputOpcao02.disabled = true
+    }
+    if(inputOpcao10.value === "O" || inputOpcao10.value === "X"){
+        inputOpcao10.disabled = true
+    }
+    if(inputOpcao11.value === "O" || inputOpcao11.value === "X"){
+        inputOpcao11.disabled = true
+    }
+    if(inputOpcao12.value === "O" || inputOpcao12.value === "X"){
+        inputOpcao12.disabled = true
+    }
+    if(inputOpcao20.value === "O" || inputOpcao20.value === "X"){
+        inputOpcao20.disabled = true
+    }
+    if(inputOpcao21.value === "O" || inputOpcao21.value === "X"){
+        inputOpcao21.disabled = true
+    }
+    if(inputOpcao22.value === "O" || inputOpcao22.value === "X"){
+        inputOpcao22.disabled = true
+    }
+  }
 limpaJogo()
 function limpaJogo(){
     inputOpcao00.value = " "
@@ -78,6 +107,15 @@ function limpaJogo(){
     inputOpcao20.value = " "
     inputOpcao21.value = " "
     inputOpcao22.value = " "
+    inputOpcao00.disabled = false
+    inputOpcao01.disabled = false
+    inputOpcao02.disabled = false
+    inputOpcao10.disabled = false
+    inputOpcao11.disabled = false
+    inputOpcao12.disabled = false
+    inputOpcao20.disabled = false
+    inputOpcao21.disabled = false
+    inputOpcao22.disabled = false
 }
 
 function ganhador(){
@@ -88,3 +126,4 @@ if(inputResultadoO.value === "3"){
     inputGanhador.value = `${inputNomeO.value} venceu a Partida!!`
     }
 }
+

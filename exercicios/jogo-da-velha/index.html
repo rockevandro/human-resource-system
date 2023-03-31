@@ -1,5 +1,82 @@
 <html>
-    <head></head>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #66f109;
+                background-image: url(./jogo-da-velha-como-surgiu-e-como-jogar-o-jogo-de-estrategia-secular-960x487.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 0;
+            }
+            form {
+                width: 300px;
+                margin: 20px auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+            input[type="text"],
+            select {
+                display: inline-block;
+                width: 80px;
+                height: 30px;
+                margin-right: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 5px;
+                font-size: 16px;
+            }
+            select {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            button[type="button"],
+            input[type="reset"] {
+                display: inline-block;
+                margin-top: 10px;
+                background-color: #4caf50;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            input[type="reset"] {
+                background-color: #f44336;
+                margin-left: 10px;
+            }
+            #ganhador {
+                width: 200px;
+                height: 30px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 5px;
+                font-size: 16px;
+            }
+            #resultadoX,
+            #resultadoO {
+                width: 50px;
+                height: 30px;
+                border: none;
+                font-size: 16px;
+                text-align: center;
+            }
+            input[disabled] {
+                background-color: #f5f5f5;
+                color: #333;
+                cursor: not-allowed;
+            }
+        </style>
+    </head>
     <body>
         <form>
             Digite o nome do jogador X: <input id="nomeX" type="text">
@@ -7,49 +84,49 @@
             Digite o nome do jogador O: <input id="nomeO"type="text">
             <br>
             <br>
-            <select id="opcao00" onchange="verificarGanhador()">
+            <select id="opcao00" onchange="desativarOpcoesSelecionadas(); verificarGanhador()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
-            <select id="opcao01" onchange="verificarGanhador()">
+            <select id="opcao01" onchange="desativarOpcoesSelecionadas(); verificarGanhador()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
-            <select id="opcao02" onchange="verificarGanhador()">
-                <option value=" "> </option>
-                <option value="X">X</option>
-                <option value="O">O</option>
-            </select>
-            <br>
-            <select id="opcao10" onchange="verificarGanhador()">
-                <option value=" "> </option>
-                <option value="X">X</option>
-                <option value="O">O</option>
-            </select>
-            <select id="opcao11" onchange="verificarGanhador()">
-                <option value=" "> </option>
-                <option value="X">X</option>
-                <option value="O">O</option>
-            </select>
-            <select id="opcao12" onchange="verificarGanhador()">
+            <select id="opcao02" onchange="desativarOpcoesSelecionadas(); verificarGanhador()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
             <br>
-            <select id="opcao20" onchange="verificarGanhador()">
+            <select id="opcao10" onchange="desativarOpcoesSelecionadas(); verificarGanhador()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
-            <select id="opcao21" onchange="verificarGanhador()">
+            <select id="opcao11" onchange="desativarOpcoesSelecionadas(); verificarGanhador()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
-            <select id="opcao22" onchange="verificarGanhador()">
+            <select id="opcao12" onchange="desativarOpcoesSelecionadas(); verificarGanhador()">
+                <option value=" "> </option>
+                <option value="X">X</option>
+                <option value="O">O</option>
+            </select>
+            <br>
+            <select id="opcao20" onchange="desativarOpcoesSelecionadas(); verificarGanhador()">
+                <option value=" "> </option>
+                <option value="X">X</option>
+                <option value="O">O</option>
+            </select>
+            <select id="opcao21" onchange="desativarOpcoesSelecionadas(); verificarGanhador()">
+                <option value=" "> </option>
+                <option value="X">X</option>
+                <option value="O">O</option>
+            </select>
+            <select id="opcao22" onchange="desativarOpcoesSelecionadas(); verificarGanhador()">
                 <option value=" "> </option>
                 <option value="X">X</option>
                 <option value="O">O</option>
