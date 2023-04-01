@@ -5,10 +5,15 @@
 </head>
 
 <body>
-    <select name="" id="escolaridade">
+    <select onchange="filtrarListaDeCandidatos()" name="" id="nivelEscolaridade"> 
         <option value="0">
             Selecione a escolaridade para filtrar
         </option>
+    </select>
+    <select onchange="filtrarFumanteOuNaoFumante()" id="fumanteOuNao">
+        <option value="0"> Selecione uma opção</option>
+        <option value=true>Fumante</option>
+        <option value=false>Não Fumante</option>
     </select>
     <br>
     <br>

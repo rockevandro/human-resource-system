@@ -9,6 +9,17 @@
     step="1" min="18" max="65" value="65" oninput="atualizarOutput()" >
 
     <output id="outputValue">65</output>
+
+    <br>
+
+    Filtre por anos de experiência do candidato: <input type="range" id="rangeExperiencia" 
+    step="1" min="0" max="50" value="50" oninput="atualizarOutputExperiencia()"> 
+
+    <output id="outputValueExperiencia">50</output>
+    <br>
+
+    Pesquise o nome do candidato: <input type="text" id="buscaNomeCandidato" oninput="filtrarCandidatoPorNome()">
+
     <br>
     <br>
     <select multiple size="10" onchange="preencherDadosCandidato()" id="selectCandidato">

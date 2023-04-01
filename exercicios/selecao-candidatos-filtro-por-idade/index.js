@@ -36,7 +36,7 @@ const listaDadosCandidatos = [
         "nome": "Sebastião",
         "idade": 65,
         "escolaridade": "4° série",
-        "anosExperiencia": 51,
+        "anosExperiencia": 49,
         "fumante": true
     },
     {
@@ -103,6 +103,36 @@ function atualizarOutput(){
 const filtrarCandidatosPelaIdade = valorDoRangeIdade => {
     const listaFiltrada = listaDadosCandidatos.filter(candidato => candidato.idade <= valorDoRangeIdade)
     selectCandidato.innerHTML = ""
+
+    for (let i = 0; i < listaFiltrada.length; i = i + 1) {
+        const candidato = listaFiltrada[i]
+        selectCandidato.insertAdjacentHTML("beforeend", `<option value='${candidato.numero}'>${candidato.nome}</option>`)
+    }
+}
+
+function atualizarOutputExperiencia(){
+    const rangeExperiencia = document.getElementById("rangeExperiencia").value
+    document.getElementById("outputValueExperiencia").textContent = rangeExperiencia
+
+    filtrarCandidatoAnosDeExperiencia(rangeExperiencia)
+}
+
+const filtrarCandidatoAnosDeExperiencia = valorRangeExperiencia => {
+    const listaFiltrada = listaDadosCandidatos.filter(candidato => candidato.anosExperiencia >= valorRangeExperiencia)
+    selectCandidato.innerHTML = ""
+    
+
+    for (let i = 0; i < listaFiltrada.length; i = i + 1) {
+        const candidato = listaFiltrada[i]
+        selectCandidato.insertAdjacentHTML("beforeend", `<option value='${candidato.numero}'>${candidato.nome}</option>`)
+    }
+}
+
+const filtrarCandidatoPorNome = () => {
+    const buscaNomeCandidato = document.getElementById("buscaNomeCandidato").value
+    const listaFiltrada = listaDadosCandidatos.filter(candidato => candidato.nome.toUpperCase().startsWith(buscaNomeCandidato.toUpperCase()))
+    selectCandidato.innerHTML = ""
+    
 
     for (let i = 0; i < listaFiltrada.length; i = i + 1) {
         const candidato = listaFiltrada[i]
