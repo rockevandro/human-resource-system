@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    Filtre a idade máxima do candidato: <input type="range" id="rangeIdade"
+    step="1" min="18" max="65" value="65" oninput="atualizarOutput()" >
+
+    <output id="outputValue">65</output>
+    <br>
+    <br>
+    <select multiple size="10" onchange="preencherDadosCandidato()" id="selectCandidato">
+        <option value="0">
+            Selecione o candidato
+        </option>
+    </select>
+    <br>
+    <br>
+    Nome: <input id="nome" disabled>
+    <br>
+    <br>
+    Idade: <input id="idade" disabled>
+    <br>
+    <br>
+    Nível de escolaridade: <input id="escolaridade" disabled>
+    <br>
+    <br>
+    Anos de experiência: <input id="anosExperiencia" disabled>
+    <br>
+    <br>
+    Fumante: <input type="checkbox" id="fumante" disabled>
+    <br>
+    <br>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
