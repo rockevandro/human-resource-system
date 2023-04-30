@@ -5,6 +5,10 @@ const inputIdade = document.getElementById("idade")
 const inputEscolaridade = document.getElementById("escolaridade")
 const inputAnosExperiencia = document.getElementById("anosExperiencia")
 const inputFumante = document.getElementById("fumante")
+const checkbox = document.getElementById("eFumante")
+const inputPesquisarNome = document.getElementById("filtroNome")
+const inputMorada = document.getElementById("morada")
+const checkboxAnadia = document.getElementById("Anadia")
 
 const listaDadosCandidatos = [
     {
@@ -12,7 +16,8 @@ const listaDadosCandidatos = [
         "nome": "Joaquim da Silva",
         "idade": 65,
         "escolaridade": "4° série",
-        "anosExperiencia": 50,
+        "anosExperiencia": 45,
+        "morada": "Oiã",
         "fumante": true
     },
     {
@@ -21,6 +26,7 @@ const listaDadosCandidatos = [
         "idade": 45,
         "escolaridade": "Ensino médio completo",
         "anosExperiencia": 20,
+        "morada": "Anadia",
         "fumante": true
     },
     {
@@ -28,7 +34,8 @@ const listaDadosCandidatos = [
         "nome": "João",
         "idade": 65,
         "escolaridade": "7° série",
-        "anosExperiencia": 50,
+        "anosExperiencia": 45,
+        "morada": "Agueda",
         "fumante": false
     },
     {
@@ -36,7 +43,8 @@ const listaDadosCandidatos = [
         "nome": "Sebastião",
         "idade": 65,
         "escolaridade": "4° série",
-        "anosExperiencia": 51,
+        "anosExperiencia": 22,
+        "morada": "Oiã",
         "fumante": true
     },
     {
@@ -45,6 +53,7 @@ const listaDadosCandidatos = [
         "idade": 50,
         "escolaridade": "8° série",
         "anosExperiencia": 30,
+        "morada": "Anadia",
         "fumante": true
     },
     {
@@ -53,6 +62,7 @@ const listaDadosCandidatos = [
         "idade": 25,
         "escolaridade": "Ensino Superior",
         "anosExperiencia": 1,
+        "morada": "Agueda",
         "fumante": false
     },
     {
@@ -61,6 +71,7 @@ const listaDadosCandidatos = [
         "idade": 52,
         "escolaridade": "Ensino médio incompleto",
         "anosExperiencia": 35,
+        "morada": "Oiã",
         "fumante": false
     },
     {
@@ -69,8 +80,28 @@ const listaDadosCandidatos = [
         "idade": 30,
         "escolaridade": "Ensino Superior",
         "anosExperiencia": 8,
+        "morada": "Oliveira do Bairro",
         "fumante": true
+    },
+    {
+        "numero": 9,
+        "nome": "Monize",
+        "idade": 21,
+        "escolaridade": "Ensino Superior Completo",
+        "anosExperiencia": 4,
+        "morada": "Oliveira do Bairro",
+        "fumante": false
+    },
+    {
+        "numero": 10,
+        "nome": "Venício",
+        "idade": 24,
+        "escolaridade": "Ensino Superior Completo",
+        "anosExperiencia": 6,
+        "morada": "Oliveira do Bairro",
+        "fumante": false
     }
+
 ]
 
 
@@ -90,6 +121,7 @@ function preencherDadosCandidato() {
     inputIdade.value = candidatoFiltrado.idade
     inputEscolaridade.value = candidatoFiltrado.escolaridade
     inputAnosExperiencia.value = candidatoFiltrado.anosExperiencia
+    inputMorada.value = candidatoFiltrado.morada
     inputFumante.checked = candidatoFiltrado.fumante
 }
 
@@ -109,3 +141,72 @@ const filtrarCandidatosPelaIdade = valorDoRangeIdade => {
         selectCandidato.insertAdjacentHTML("beforeend", `<option value='${candidato.numero}'>${candidato.nome}</option>`)
     }
 }
+function atualizarOutputEX(){
+    const rangeExperiencia = document.getElementById("rangeExperiencia").value
+    document.getElementById("outputValueEXP").textContent = rangeExperiencia
+
+    filtrarCandidatosPelaExperiencia(rangeExperiencia)
+}
+
+const filtrarCandidatosPelaExperiencia = valorDoRangeEXP => {
+    const listaFiltrada = listaDadosCandidatos.filter(candidato => candidato.anosExperiencia <= valorDoRangeEXP)
+    selectCandidato.innerHTML = ""
+
+    for (let i = 0; i < listaFiltrada.length; i = i + 1) {
+        const candidato = listaFiltrada[i]
+        selectCandidato.insertAdjacentHTML("beforeend", `<option value='${candidato.numero}'>${candidato.nome}</option>`)
+    }
+}
+function filtroFumante(){
+    selectCandidato.innerHTML = ""
+    const eFumante = checkbox.checked
+    listaDadosCandidatos.filter((candidato) => {
+       if(candidato.fumante == eFumante) {
+         selectCandidato.insertAdjacentHTML("beforeend", `<option value='${candidato.numero}'>${candidato.nome}</option>`)
+        }}
+    )
+  }
+
+  function filtrarPesquisa() {
+    const caixaDigitarNome = inputPesquisarNome.value
+    let caixa = caixaDigitarNome.toLowerCase()
+    const listaFiltrada = listaDadosCandidatos.filter(candidato => candidato.nome.toLowerCase().startsWith(caixa))
+    selectCandidato.innerHTML = ""
+
+    for (let i = 0; i < listaFiltrada.length; i = i + 1) {
+        const candidato = listaFiltrada[i]
+        selectCandidato.insertAdjacentHTML("beforeend", `<option value='${candidato.numero}'>${candidato.nome}</option>`)
+    }
+}
+function filtroMoradaAnadia() {
+    selectCandidato.innerHTML = ""
+    listaDadosCandidatos.filter((candidato) => {
+       if(candidato.morada == "Anadia") {
+         selectCandidato.insertAdjacentHTML("beforeend", `<option value='${candidato.numero}'>${candidato.nome}</option>`)
+        }}
+    )
+  }
+  function filtroMoradaOia() {
+    selectCandidato.innerHTML = ""
+    listaDadosCandidatos.filter((candidato) => {
+       if(candidato.morada == "Oiã") {
+         selectCandidato.insertAdjacentHTML("beforeend", `<option value='${candidato.numero}'>${candidato.nome}</option>`)
+        }}
+    )
+  }
+  function filtroMoradaAgueda() {
+    selectCandidato.innerHTML = ""
+    listaDadosCandidatos.filter((candidato) => {
+       if(candidato.morada == "Agueda") {
+         selectCandidato.insertAdjacentHTML("beforeend", `<option value='${candidato.numero}'>${candidato.nome}</option>`)
+        }}
+    )
+  }
+  function filtroMoradaOliveira() {
+    selectCandidato.innerHTML = ""
+    listaDadosCandidatos.filter((candidato) => {
+       if(candidato.morada == "Oliveira do Bairro") {
+         selectCandidato.insertAdjacentHTML("beforeend", `<option value='${candidato.numero}'>${candidato.nome}</option>`)
+        }}
+    )
+  }

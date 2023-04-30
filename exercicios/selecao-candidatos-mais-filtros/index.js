@@ -136,3 +136,6 @@ listaDadosCandidatos.filter((candidato) => {
         }}
     )
   }
+  function sairDaPagina() {
+    window.location.href = "http://127.0.0.1:5500/pagina-de-login/pagina-inicial.html"
+}

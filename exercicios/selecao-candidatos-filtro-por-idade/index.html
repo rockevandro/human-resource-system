@@ -5,11 +5,24 @@
 </head>
 
 <body>
+    Digite o nome do candidato: <input type="text" id="filtroNome" oninput="filtrarPesquisa()">
+    <br>
     Filtre a idade máxima do candidato: <input type="range" id="rangeIdade"
     step="1" min="18" max="65" value="65" oninput="atualizarOutput()" >
-
     <output id="outputValue">65</output>
     <br>
+    Filtre os anos de experiência do candidato: <input type="range" id="rangeExperiencia"
+    step="1" min="0" max="45" value="45" oninput="atualizarOutputEX()()" >
+
+    <output id="outputValueEXP">45</output>
+    <br>
+    Fumante: <input onchange="filtroFumante()" type="checkbox" id="eFumante" >
+    <br>
+    Filtrar por freguesias:  
+    Oiã: <input onchange="filtroMoradaOia()" type="checkbox" id="oia">
+    Anadia: <input onchange="filtroMoradaAnadia()" type="checkbox" id="Anadia">
+    Oliveira do Bairro: <input onchange="filtroMoradaOliveira()" type="checkbox" id="ioa">
+    Agueda: <input onchange="filtroMoradaAgueda()" type="checkbox" id="agueda">
     <br>
     <select multiple size="10" onchange="preencherDadosCandidato()" id="selectCandidato">
         <option value="0">
@@ -27,10 +40,14 @@
     Nível de escolaridade: <input id="escolaridade" disabled>
     <br>
     <br>
+    Morada: <input id="morada" disabled>
+    <br>
+    <br>
     Anos de experiência: <input id="anosExperiencia" disabled>
     <br>
     <br>
     Fumante: <input type="checkbox" id="fumante" disabled>
+
     <br>
     <br>
 

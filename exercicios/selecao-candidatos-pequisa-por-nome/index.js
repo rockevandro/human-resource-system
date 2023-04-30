@@ -5,6 +5,7 @@ const inputIdade = document.getElementById("idade")
 const inputEscolaridade = document.getElementById("escolaridade")
 const inputAnosExperiencia = document.getElementById("anosExperiencia")
 const inputFumante = document.getElementById("fumante")
+const inputPesquisarNome = document.getElementById("filtroNome")
 
 const listaDadosCandidatos = [
     {
@@ -90,4 +91,14 @@ function preencherDadosCandidato() {
     inputEscolaridade.value = candidatoFiltrado.escolaridade
     inputAnosExperiencia.value = candidatoFiltrado.anosExperiencia
     inputFumante.checked = candidatoFiltrado.fumante
+}
+
+function filtrarPesquisa() {
+    const listaFiltrada = listaDadosCandidatos.filter(candidato => candidato.nome == inputPesquisarNome.value)
+    selectCandidato.innerHTML = ""
+
+    for (let i = 0; i < listaFiltrada.length; i = i + 1) {
+        const candidato = listaFiltrada[i]
+        selectCandidato.insertAdjacentHTML("beforeend", `<option value='${candidato.numero}'>${candidato.nome}</option>`)
+    }
 }

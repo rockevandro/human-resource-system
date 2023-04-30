@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    Filtrar por localidade: 
+    Oiã <input onchange="filtroLocalidadeOia()" type="checkbox" id="oia">
+    Anadia <input onchange="filtroLocalidadeAnadia()" type="checkbox" id="anadia">
+    Oliveira do Bairro <input onchange="filtroLocalidadeOliveira()" type="checkbox" id="oliveira">
+    Agueda <input onchange="filtroLocalidadeAgueda()" type="checkbox" id="agueda">
+    <br>
+    <br>
+    Filtrar pelo salario:
+    <input type="range" step="1" min="700" max="3000" value="3000" id="rangeSalario" oninput="atualizaOutputSalario()">
+    <output id="output-value">3000</output>
+    <br>
+    <br>
+    Vagas Abertas: 
+    <br>
+    <select multiple size="10" onchange="preencherDadosVagas()" id="vagasAbertas">
+        <option value="0">
+            Selecione o cargo
+        </option>
+    </select>
+    <br>
+    <br>
+    Cargo: <input id="cargo" disabled>
+    <br>
+    <br>
+    Salário em euros: <input id="salario" disabled>
+    <br>
+    <br>
+    Empresa: <input id="empresa" disabled>
+    <br>
+    <br>
+    Nível de escolaridade exigido: <input id="escolaridade" disabled>
+    <br>
+    <br>
+    Experiência necessária: <input id="experiencia" disabled>
+    <br>
+    <br>
+    Horário: <input id="horarios" disabled>
+    <br>
+    <br>
+    Localidade <input id="localidade" disabled>
+    <br>
+    <br>
+    <input type="button" value="Sair" id="botaosair" onclick="sairDaPagina()">
+
+    <script src="script.js"></script>
+</body>
+
+</html>
